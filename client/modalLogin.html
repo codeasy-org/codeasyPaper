@@ -1,0 +1,32 @@
+<template name="modalLogin">
+  <div class="row flex-spaces child-borders">
+    <label style="display: none;" id="lbModalLogin" class="paper-btn margin" for="modal-1">Another Modal!</label>
+  </div>
+  <input class="modal-state" id="modal-1" type="checkbox">
+  <div class="modal">
+    <label class="modal-bg" for="modal-1"></label>
+    <div class="modal-body border">
+      <label class="btn-close" for="modal-1">X</label>
+      <h4 class="modal-title">어서옵쇼</h4>
+      <div class="form-group">
+        <label for="paperInputs1">이메일</label>
+        <input type="text" placeholder="Nice input" id="paperInputs1">
+      </div>
+      <div class="form-group">
+        <label for="paperInputs2">비밀번호</label>
+        <input type="password" placeholder="Nice input" id="paperInputs2">
+      </div>
+      <fieldset class="form-group">
+        <label for="paperSwitch11" class="paper-switch-2-label">
+          자동로그인
+        </label>
+        <label class="paper-switch-2">
+          <input id="paperSwitch11" name="paperSwitch11" type="checkbox" checked />
+          <span class="paper-switch-slider round"></span>
+        </label>
+      </fieldset>
+      <button class="btn-warning idKakaoLogin"><img src="/kakao.png" alt="" class="no-border">카카오로그인</button>
+      <label class="paper-btn" for="modalLogin">회원가입</label>
+    </div>
+  </div>
+</template>
