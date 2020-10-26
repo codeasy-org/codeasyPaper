@@ -1,2 +1,2 @@
-Kakao.init 'c28e8fe3b0047ba9bd2068c4d646b62d'
+Kakao.init '27bbb40fd0c3dc6d056c9b8f82321c57'
 #console.log Kakao.isInitialized()
