@@ -1,0 +1,30 @@
+<template name="header">
+  <div id="header">
+    <nav class="border fixed split-nav">
+      <div class="nav-brand">
+        <h3><a href="/" style="color: #41403e !important;">코드이:지</a></h3>
+      </div>
+      <div class="collapsible">
+        <input id="collapsible1" type="checkbox" name="collapsible1">
+        <label for="collapsible1">
+          <div class="bar1">-</div>
+          <div class="bar2">-</div>
+          <!--      <div class="bar3"></div>-->
+        </label>
+        <div class="collapsible-body">
+          <ul class="inline">
+            <li><a href="#">만들기</a></li>
+            <li><a href="#">도와주기</a></li>
+            {{#if currentUser}}
+              <li><a href="#" onclick="event.preventDefault(); Meteor.logout();">로그아웃</a></li>
+            {{else}}
+              <li><a href="#" onclick="event.preventDefault(); $('#lbModalLogin').click();">로그인</a></li>
+            {{/if}}
+
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</template>

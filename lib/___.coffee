@@ -17,6 +17,14 @@ if Meteor.isServer
     future.wait()
 
 if Meteor.isClient
+  FlowRouter.template = (url, t_name, d_name) ->
+    #url: 접속 url / t_name: 연결 template / d_name: 다이나믹 template
+    FlowRouter.route url,
+      name: url
+      action: ->
+        BlazeLayout.render t_name, d_name
+        return
+    return
   Template.registerHelper 'is', (obj, val) -> return obj == val
   Template.registerHelper 'equal', (val1, val2) -> return val1 == val2
   Template.registerHelper 'exist', (obj) -> return ___.exist(obj)

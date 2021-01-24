@@ -1,7 +1,81 @@
-Template.body.onCreated ->
+#import 'trix'
+import Quill from 'quill'
+import { ImageDrop } from 'quill-image-drop-module';
+#import ImageResize from '@felrov/quill-image-resize-module';
+import ImageResize from 'quill-image-resize'
 
-Template.body.onRendered ->
-  $('#lbModalLogin').click()
+#import EditorJS from '@editorjs/editorjs'
+#import Header from '@editorjs/header'
+#import List from '@editorjs/list'
+#import ImageTool from '@editorjs/image'
+
+#import MediumEditor from 'medium-editor'
+self = @
+self.quill = null
+
+Template.main.onCreated ->
+
+Template.main.helpers
+  mark: ->
+    return "(function contact(phone, email, address) {
+              phone.call('<a href=\"tel:+82-70-7913-6309\">+82-70-7913-6309</a>');
+              email.send('<a href=\"mailto:support@codeasy.org\" target=\"_blank\">support@codeasy.org</a>');
+              address.go('대한민국 서울 성북');
+              })();"
+
+Template.main.onRendered ->
+  toolbarOptions = [
+    [{ 'size': ['small', false, 'large', 'huge'] }],  # custom dropdown
+#        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    ['bold', 'italic', 'underline', 'strike'],        # toggled buttons
+    ['blockquote', 'code-block'],
+#        [{ 'header': 1 }, { 'header': 2 }],               # custom button values
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    [{ 'script': 'sub'}, { 'script': 'super' }],      # superscript/subscript
+    [{ 'indent': '-1'}, { 'indent': '+1' }, { 'align': []} ],          # outdent/indent, align
+    [{ 'direction': 'rtl' }],                         # text direction
+    [{ 'color': [] }, { 'background': [] }],          # dropdown with defaults from theme
+#        [{ 'font': [] }],
+    ['image', 'video'],
+    ['clean']                                         # remove formatting button
+  ]
+
+  imageHandler = ->
+    range = @quill.getSelection()
+    value = prompt('What is the image URL')
+    if value
+      @quill.insertEmbed range.index, 'image', value, Quill.sources.USER
+
+  Quill.register('modules/imageResize', ImageResize);
+  Quill.register('modules/imageDrop', ImageDrop);
+
+
+  self.quill = new Quill '#editor',
+    modules:
+      imageDrop: true
+      imageResize: {
+        modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
+      }
+      toolbar:
+        container: toolbarOptions
+#        handlers:
+#          image: imageHandler
+    placeholder: '써라. 읽을 것이다...'
+    theme: 'snow'
+
+
+
+#  editor = new EditorJS
+#    holder: 'editor'
+#    tools: {
+#      header: Header
+#      list: List
+#
+#    }
+
+  #  cl MediumEditor
+#  editor = new MediumEditor('.editor');
+#  $('#lbModalLogin').click()
 
 #  interpreter = (command) ->
 #    console.log command

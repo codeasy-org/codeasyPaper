@@ -1,279 +1,244 @@
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://unpkg.com/papercss@1.8.1/dist/paper.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gamja+Flower&family=Hi+Melody&family=Nanum+Brush+Script&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-
-  <title>Document</title>
-
-  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
-  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.18.3/js/jquery.terminal.min.js"></script>-->
-  <!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.18.3/css/jquery.terminal.min.css" rel="stylesheet"/>-->
-
-</head>
-
-<body>
-{{> modalLogin}}
-<nav class="border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="/" style="color: #41403e !important;">코드이:지</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <label for="collapsible1">
-      <div class="bar1">-</div>
-      <div class="bar2">-</div>
-      <!--      <div class="bar3"></div>-->
-    </label>
-    <div class="collapsible-body">
-      <ul class="inline">
-        <li><a href="#">만들기</a></li>
-        <li><a href="#">도와주기</a></li>
-        <li><a href="#" onclick="event.preventDefault(); $('#lbModalLogin').click()">로그인</a></li>
-        <li></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="row top">
-  <div class="sm-12 md-8 col">
-    <div class="paper">
-      <div class="row flex-center">
-        <div class="text-center">
-          <h1>주식회사 코디:지</h1>
-          <h3 class="blink2">깨끗한 종이에 주옥같은 코드</h3>
-          <span class="prompt_cursor"></span>
-          <div class="row flex-center child-borders">
-            <a class="paper-btn margin" href="#">만들기</a>
-            <a class="paper-btn margin" href="#">도와주기</a>
-            <a class="paper-btn margin" href="#">알려주기</a>
-            <a class="paper-btn margin" href="#">깃허브</a>
-<!--            <a href="https://github.com/codeasy-org/codeasy" target="_blank" class="paper-btn margin" style="padding: 0px;"><img src="kakao.png" alt="" class="no-border" style="height:52px;"></a>-->
-          </div>
-        </div>
-      </div>
 
 
 
-
-      <div class="section">
-        <h2># 주로 하는 일</h2>
-        <h3>리얼타임 <kbd popover-top="웹 어플리케이션">Web</kbd> / 하이브리드 <kbd>App</kbd> <span class="paper-btn badge secondary">만들기</span></h3>
-        <p>
-          <code>풀 리액티브(Full Reactive)</code> 기술을 통해 실시간으로 데이터가 반영되는 웹/앱 어플리케이션을 주로 개발하고 있어요.
-        </p>
-        <h3>시스템 컨설팅 <kbd>for</kbd> 스타트업 <span class="paper-btn badge warning">도와주기</span></h3>
-        <p>
-          <code>풀스택(Full Stack)</code> 개발과 <code>마이크로서비스(Micro Service)</code>로 개발비용과 기간을 단축해야 하는 스타트업 업체들에게 꼭 필요한 조언을 해드리기도 하지요.
-        </p>
-        <h3>기술교육 <kbd>for</kbd> 업체/기관 <span class="paper-btn badge danger">알려주기</span></h3>
-        <p>
-          프론트엔드/백엔드에 데이터베이스까지, 세상에서 제일 재밌고 쉽게 배울 수 있는 <code>Node.js + Meteor</code> 플랫폼을 포교하고 있습니다.
-        </p>
-      </div>
-
-      <!--      <div class="section">-->
-      <!--        <h2>하고 싶은 일</h2>-->
-      <!--        <h3>새로운 건 항상 재미있지요</h3>-->
-      <!--        <p>-->
-      <!--          같은 것만 하면 지겹잖아요. 항상 새로운 세상을 만나기 위해서 노력하고 있지요.-->
-      <!--        </p>-->
-      <!--        <h3>더불어 살면 나아지겠죠</h3>-->
-      <!--        <p>-->
-      <!--          먹고 사는 일도 중요하지만, 작지만 세상에 도움이 되는 일을 할 수 있다면 그것도 항상 보람 찰 거에요.-->
-      <!--        </p>-->
-      <!--        <h3>좋은 건 함께 합시다</h3>-->
-      <!--        <p>-->
-      <!--          배움이 배고픈 분들께는 기술을, 그냥 진짜 배고픈 분들께는 능력에 맞는 일거리를 제공 해 드립니다.-->
-      <!--        </p>-->
-      <!--        <h3></h3>-->
-      <!--        <p>-->
-      <!--        </p>-->
-      <!--      </div>-->
-
-      <div class="row flex-spaces" style="font-size: 1.5em;">
-        <pre class="border border-5">(function contact(phone, email, address) {
-      phone.call('<a href="tel:+82-70-7913-6309">+82-70-7913-6309</a>');
-      email.send('<a href="mailto:support@codeasy.org" target="_blank">support@codeasy.org</a>');
-      address.go('대한민국 서울 성북');
-})();</pre>
-        <!--        <div class="sm-3 col border-dotted">Dotted</div>-->
-        <!--        <div class="sm-3 col border-dashed border-thick">Dashed Thick</div>-->
-        <!--        <div class="sm-3 col border-dotted border-thick">Dotted Thick</div>-->
-      </div>
-
-
-      <!--      <textarea class="output"></textarea>-->
-      <!--      <div>-->
-      <!--        <span>root@SAM </span>-->
-      <!--      </div>-->
-      <!--      <div>-->
-      <!--        <span>$</span>&nbsp;-->
-      <!--        <input class="command"/>-->
-      <!--      </div>-->
-    </div>
-  </div>
-
-  <div class="sm-12 md-4 col">
-    <div class="paper">
-      <h3 class="sidebar-title font-black" style="text-align:center">
-        <a href="/docs">Documentation</a>
-      </h3>
-      <div class="row">
-        <div class="collapsible full-width">
-          <input id="collapsible-components" type="radio" name="collapsible">
-          <label for="collapsible-components">Components</label>
-          <div class="collapsible-body">
-            <ul>
-
-              <li>
-                <a href="/docs/components/alerts/">Alerts</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/articles/">Articles</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/badges/">Badges</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/breadcrumb/">Breadcrumb</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/buttons/">Buttons</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/cards/">Cards</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/collapsible/">Collapsibles</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/forms/">Forms</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/modals/">Modals</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/navbar/">Navbar</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/popovers/">Popovers</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/progress/">Progress</a>
-              </li>
-
-              <li>
-                <a href="/docs/components/tabs/">Tabs</a>
-              </li>
-
-            </ul>
+<template name="main">
+  <div class="row top">
+    <div class="sm-12 md-8 col">
+      <div class="paper">
+        <div class="row flex-center">
+          <div class="text-center">
+            <h1>주식회사 코디:지</h1>
+            <h3 class="blink2">새하얀 종이에 주옥같은 코드</h3>
+            <span class="prompt_cursor"></span>
+            <div class="row flex-center child-borders">
+              <a class="paper-btn margin" href="#">만들기</a>
+              <a class="paper-btn margin" href="#">도와주기</a>
+              <a class="paper-btn margin" href="#">알려주기</a>
+              <a class="paper-btn margin" href="#">깃허브</a>
+              <!--            <a href="https://github.com/codeasy-org/codeasy" target="_blank" class="paper-btn margin" style="padding: 0px;"><img src="kakao.png" alt="" class="no-border" style="height:52px;"></a>-->
+            </div>
           </div>
         </div>
 
-        <div class="collapsible full-width">
-          <input id="collapsible-content" type="radio" name="collapsible">
-          <label for="collapsible-content">Content</label>
-          <div class="collapsible-body">
-            <ul>
 
-              <li>
-                <a href="/docs/content/code/">Code</a>
-              </li>
 
-              <li>
-                <a href="/docs/content/images/">Images</a>
-              </li>
 
-              <li>
-                <a href="/docs/content/lists/">Lists</a>
-              </li>
-
-              <li>
-                <a href="/docs/content/tables/">Tables</a>
-              </li>
-
-              <li>
-                <a href="/docs/content/typography/">Typography</a>
-              </li>
-
-            </ul>
-          </div>
+        <div class="section">
+          <h2># 주로 하는 일</h2>
+          <h3>리얼타임 <kbd popover-top="웹 어플리케이션!">Web</kbd> / 하이브리드 <kbd popover-top="하이브리드 모바일 앱!">App</kbd> <span class="paper-btn badge secondary">만들기</span></h3>
+          <p>
+            <code>풀 리액티브(Full Reactive)</code> 기술을 통해 실시간으로 데이터가 반영되는 웹/앱 어플리케이션을 주로 개발하고 있어요.
+          </p>
+          <h3>시스템 컨설팅 <kbd popover-top="생산성과 확장성이 핵심!">for</kbd> 스타트업 <span class="paper-btn badge warning">도와주기</span></h3>
+          <p>
+            <code>풀스택(Full Stack)</code> 개발과 <code>마이크로서비스(Micro Service)</code>로 개발비용과 기간을 단축해야 하는 스타트업 업체들에게 꼭 필요한 조언을 해드리기도 하지요.
+          </p>
+          <h3>기술교육 <kbd popover-top="눈높이 교육이 핵심!">for</kbd> 업체/기관 <span class="paper-btn badge danger">알려주기</span></h3>
+          <p>
+            프론트엔드/백엔드에 데이터베이스까지, 세상에서 제일 재밌고 쉽게 배울 수 있는 <code>Node.js + Meteor</code> 플랫폼을 포교하고 있습니다.
+          </p>
         </div>
 
-        <div class="collapsible full-width">
-          <input id="collapsible-layout" type="radio" name="collapsible">
-          <label for="collapsible-layout">Layout</label>
-          <div class="collapsible-body">
-            <ul>
+        <!--      <div class="section">-->
+        <!--        <h2>하고 싶은 일</h2>-->
+        <!--        <h3>새로운 건 항상 재미있지요</h3>-->
+        <!--        <p>-->
+        <!--          같은 것만 하면 지겹잖아요. 항상 새로운 세상을 만나기 위해서 노력하고 있지요.-->
+        <!--        </p>-->
+        <!--        <h3>더불어 살면 나아지겠죠</h3>-->
+        <!--        <p>-->
+        <!--          먹고 사는 일도 중요하지만, 작지만 세상에 도움이 되는 일을 할 수 있다면 그것도 항상 보람 찰 거에요.-->
+        <!--        </p>-->
+        <!--        <h3>좋은 건 함께 합시다</h3>-->
+        <!--        <p>-->
+        <!--          배움이 배고픈 분들께는 기술을, 그냥 진짜 배고픈 분들께는 능력에 맞는 일거리를 제공 해 드립니다.-->
+        <!--        </p>-->
+        <!--        <h3></h3>-->
+        <!--        <p>-->
+        <!--        </p>-->
+        <!--      </div>-->
 
-              <li>
-                <a href="/docs/layout/container/">Container</a>
-              </li>
 
-              <li>
-                <a href="/docs/layout/flexbox/">Flexbox</a>
-              </li>
 
-            </ul>
-          </div>
-        </div>
 
-        <div class="collapsible full-width">
-          <input id="collapsible-utilities" type="radio" name="collapsible">
-          <label for="collapsible-utilities">Utilities</label>
-          <div class="collapsible-body">
-            <ul>
-
-              <li>
-                <a href="/docs/utilities/borders/">Borders &amp; Shadows</a>
-              </li>
-
-              <li>
-                <a href="/docs/utilities/colors/">Colors</a>
-              </li>
-
-              <li>
-                <a href="/docs/utilities/dark-mode/">Dark Mode</a>
-              </li>
-
-              <li>
-                <a href="/docs/utilities/spacing/">Spacing</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-
+        <!--      <textarea class="output"></textarea>-->
+        <!--      <div>-->
+        <!--        <span>root@SAM </span>-->
+        <!--      </div>-->
+        <!--      <div>-->
+        <!--        <span>$</span>&nbsp;-->
+        <!--        <input class="command"/>-->
+        <!--      </div>-->
       </div>
     </div>
 
-    <div class="paper">
-      <div class="row flex-center">
-        <p>Made with 💛 by <a href="https://vlaservich.com" target="_blank">Rhyne</a> and some <a href="https://github.com/rhyneav/papercss/graphs/contributors">fantastic contributors</a>!</p>
-      </div>
-    </div>
+    <div class="sm-12 md-4 col">
+      <div class="paper">
+        <h3 class="sidebar-title font-black" style="text-align:center">
+          <a href="/docs">Documentation</a>
+        </h3>
+        <div class="row">
+          <div class="collapsible full-width">
+            <input id="collapsible-components" type="radio" name="collapsible">
+            <label for="collapsible-components">Components</label>
+            <div class="collapsible-body">
+              <ul>
 
-    <div class="paper">
-      <!--      <div class="row flex-center">-->
-      <div id="jquery_terminal" class="crt"></div>
-      <!--      </div>-->
+                <li>
+                  <a href="/docs/components/alerts/">Alerts</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/articles/">Articles</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/badges/">Badges</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/breadcrumb/">Breadcrumb</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/buttons/">Buttons</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/cards/">Cards</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/collapsible/">Collapsibles</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/forms/">Forms</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/modals/">Modals</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/navbar/">Navbar</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/popovers/">Popovers</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/progress/">Progress</a>
+                </li>
+
+                <li>
+                  <a href="/docs/components/tabs/">Tabs</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="collapsible full-width">
+            <input id="collapsible-content" type="radio" name="collapsible">
+            <label for="collapsible-content">Content</label>
+            <div class="collapsible-body">
+              <ul>
+
+                <li>
+                  <a href="/docs/content/code/">Code</a>
+                </li>
+
+                <li>
+                  <a href="/docs/content/images/">Images</a>
+                </li>
+
+                <li>
+                  <a href="/docs/content/lists/">Lists</a>
+                </li>
+
+                <li>
+                  <a href="/docs/content/tables/">Tables</a>
+                </li>
+
+                <li>
+                  <a href="/docs/content/typography/">Typography</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="collapsible full-width">
+            <input id="collapsible-layout" type="radio" name="collapsible">
+            <label for="collapsible-layout">Layout</label>
+            <div class="collapsible-body">
+              <ul>
+
+                <li>
+                  <a href="/docs/layout/container/">Container</a>
+                </li>
+
+                <li>
+                  <a href="/docs/layout/flexbox/">Flexbox</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="collapsible full-width">
+            <input id="collapsible-utilities" type="radio" name="collapsible">
+            <label for="collapsible-utilities">Utilities</label>
+            <div class="collapsible-body">
+              <ul>
+
+                <li>
+                  <a href="/docs/utilities/borders/">Borders &amp; Shadows</a>
+                </li>
+
+                <li>
+                  <a href="/docs/utilities/colors/">Colors</a>
+                </li>
+
+                <li>
+                  <a href="/docs/utilities/dark-mode/">Dark Mode</a>
+                </li>
+
+                <li>
+                  <a href="/docs/utilities/spacing/">Spacing</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="row border border-primary padding-large" style="font-size: 1em;">
+            {{#markdown}}(function contact(phone, email, address) { phone.call('<a href=\"tel:+82-70-7913-6309\">+82-70-7913-6309</a>');
+              email.send('<a href=\"mailto:support@codeasy.org\" target=\"_blank\">support@codeasy.org</a>');
+              address.go('대한민국 서울 성북');
+              })();{{/markdown}}
+            <!--        <div class="sm-3 col border-dotted">Dotted</div>-->
+            <!--        <div class="sm-3 col border-dashed border-thick">Dashed Thick</div>-->
+            <!--        <div class="sm-3 col border-dotted border-thick">Dotted Thick</div>-->
+        </div>
+      </div>
+
+      <div class="">
+        <div id="editor" class="editor"></div>
+<!--        <trix-editor class="trix-content"></trix-editor>-->
+      </div>
+
+      <div class="paper">
+        <!--      <div class="row flex-center">-->
+        <div id="jquery_terminal" class="crt"></div>
+        <!--      </div>-->
+      </div>
     </div>
   </div>
-</div>
-
-</body>
+</template>
