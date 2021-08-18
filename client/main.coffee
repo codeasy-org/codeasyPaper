@@ -9,6 +9,8 @@ import ImageResize from 'quill-image-resize'
 #import List from '@editorjs/list'
 #import ImageTool from '@editorjs/image'
 
+# commit test online vscode editor
+
 #import MediumEditor from 'medium-editor'
 self = @
 self.quill = null
